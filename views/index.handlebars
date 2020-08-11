@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Eat Da Burger!</h1>
+<h1 style="text-align: center;">Borger</h1>
 <main>
   <div class="container">
     <div class="row">
@@ -11,18 +11,18 @@
             {{this.burger_name}}
             <form action="/{{this.id}}" method="POST">
               <input type="hidden" name="devour">
-              <button class="btn btn-dark" type="submit">Devour!</button>
+              <button class="btn btn-dark" type="submit">Devour</button>
             </form>
           </li>
           {{/unless}} {{/each}}
         </ul>
       </div>
     </div>
-    <img src="assets/img/burger.png" class="rounded mx-auto d-block" style="height: 200px;" width="300px">
+    <img src="assets/img/burger.png" class="rounded mx-auto d-block" style="height: 100px;" width="150px">
 
     <div>
       <div>
-        <h2>You've Devoured These Burgers: </h2>
+        <h2>Eaten burgers: </h2>
         <ul>
           {{#each burgers}}
           {{#if this.devoured}}
@@ -36,7 +36,7 @@
 
   </div>
 </main>
-<h3 style="text-align: center;">Add a Burger To The Menu!</h3>
+<h3 style="text-align: center;">Add a Burger To The Menu</h3>
 <div class="d-flex justify-content-center align-items-center container ">
   <form class="col-lg-6 offset-lg-3" method="POST">
     <div class="row">
