@@ -8,7 +8,7 @@ This is a burger logger using MySQL, Node, Express, Handlebars, and a homemade O
 
 ## Table of contents
 
-0. [Deployed Link](#installation)
+0. [Deployed Link](#deployed)
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [License](#license)
