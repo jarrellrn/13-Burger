@@ -1,41 +1,47 @@
-<header class="border-section">
-    <img src="assets/img/burger.png" style="height: 200px; width: 200px;" />
-</header>
+<h1 style="text-align: center;">Eat Da Burger!</h1>
+<main>
+  <div class="container">
+    <div class="row">
+      <div>
+        <h2>Eat This Burger:</h2>
+        <ul>
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <li>
+            {{this.burger_name}}
+            <form action="/{{this.id}}" method="POST">
+              <input type="hidden" name="devour">
+              <button class="btn btn-dark" type="submit">Devour!</button>
+            </form>
+          </li>
+          {{/unless}} {{/each}}
+        </ul>
+      </div>
+    </div>
+    <img src="assets/img/burger.png" class="rounded mx-auto d-block" style="height: 200px;" width="300px">
 
-<h1>Burgers!</h1>
+    <div>
+      <div>
+        <h2>You've Devoured These Burgers: </h2>
+        <ul>
+          {{#each burgers}}
+          {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
+          </li>
+          {{/if}} {{/each}}
+        </ul>
+      </div>
+    </div>
 
-<h2>Burgers to eat.</h2>
-
-<ul>
-  {{#each burger}}
-    {{#unless devoured}}
-      {{> burgers/burger-block}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have already been eaten.</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if devoured}}
-      {{> burgers/burger-block}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-
-<form class="create-form">
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-        <div class="form-group">
-            <textarea 
-                id="burger" 
-                name="burger_name" 
-                placeholder="Enter the burger you want to add..." 
-                maxlength="255"
-            ></textarea>
-        </div>
-        <button type="submit">Add Burger!</button>
-    </form>
-</form>
+  </div>
+</main>
+<h3 style="text-align: center;">Add a Burger To The Menu!</h3>
+<div class="d-flex justify-content-center align-items-center container ">
+  <form class="col-lg-6 offset-lg-3" method="POST">
+    <div class="row">
+      <input type="text" id="name" class="form-control" name="burger_name" placeholder="Enter your burger here!">
+      <button type="submit" class="btn btn-dark">Add Burger</button>
+    </div>
+  </form>
+</div>
